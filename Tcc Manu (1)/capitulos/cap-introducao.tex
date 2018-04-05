@@ -1,0 +1,27 @@
+\chapter{Introdução}
+\label{cap:introducao}
+
+
+% Sugestões de seções
+\section{Considerações preliminares}
+
+Internet vem se tornando cada vez mais popular e indispensável para a maioria da população. Hoje a Internet é uma das maiores fontes de informações, utilizada para a realização de diversas atividades do dia a dia, tais como: transações bancárias, compras \textit{online}, dentre outras \cite{fischer2014cybersecurity}. Porém  é necessário garantir a segurança dos dados que trafegam tanto na Internet como em quaisquer outras redes de computadores.
+
+Para que tal segurança ocorra, vulnerabilidades existentes em dispositivos conectados à rede devem ser encontradas e corrigidas, mas a detecção de vulnerabilidades nem sempre é uma tarefa simples, pois na maioria das vezes, vulnerabilidades estão contidas em softwares de terceiros, ou até mesmo nas configurações das redes, realizadas pelos próprios administradores e podem acabar passando despercebidas.
+De acordo com \citeonline{Gawron:2015:AVD:2799979.2799986}, a complexidade das redes de computadores aumentou consideravelmente nos últimos anos. Tal complexidade é tão grande que se tornou praticamente impossível gerenciar os riscos de segurança manualmente. Ferramentas que auxiliam os administradores de redes na realização de tal gerenciamento tornaram-se necessárias.
+
+Deste modo, existem programas que analisam os dispositivos conectados em redes de computadores em busca de informações, tais programas são chamados de \textit{scanners}, e podem auxiliar os administradores de redes na detecção de vulnerabilidades e informações a respeito da rede analisada. Os \textit{scanners} utilizam bases de dados atualizadas e realizam vários testes para identificar possíveis vulnerabilidades e informações a respeito dos dispositivos monitorados \cite{weidman2014penetration}. No entanto, quando as redes possuem centenas de dispositivos conectados, os \textit{scanners} tendem a retornar grandes quantidades de informações, demandando um grande tempo para que os administradores analisem e verifiquem os resultados retornados.
+
+%Para que a segurança dos dados ocorram, vulnerabilidades existentes em dispositivos conectados à rede devem ser encontradas e corrigidas, mas a detecção de vulnerabilidades nem sempre é uma tarefa simples, pois na maioria das vezes, vulnerabilidades estão contidas em \textit{softwares} de terceiros, ou até mesmo nas configurações das redes, realizadas pelos próprios administradores e podem acabar passando despercebidas. 
+Dessa maneira, este trabalho propõe uma arquitetura capaz de auxiliar na detecção e visualização de vulnerabilidades em redes de computadores. Sensores serão utilizados com o objetivo de obter a maior quantidade de informações disponíveis a respeito dos dispositivos que serão analisados. Tais informações serão utilizadas para criar perfis para os dispositivos da rede. Estes perfis serão armazenadas, criando uma base de dados contendo todas as informações obtidas, como por exemplo, portas de redes abertas,  o \gls{IP}, as vulnerabilidades associadas a tais dispositivos, entre outras. Essas informações serão utilizadas para auxiliar o usuário na administração da rede, as informações podem ser mostrada de maneira gráfica, através de uma interface web, facilitando o entendimento dos resultados obtidos. Além disso, para validar a arquitetura proposta será implementada uma ferramenta, na qual será utilizada dois \textit{scanners} para obter informações a respeito da rede analisada, são eles: \gls{OpenVAS} e \gls{Nmap}. As informações obtidas serão utilizadas para auxiliar no gerenciamento e manutenção da rede monitorada. 
+
+É esperado que a arquitetura consiga lidar com grandes quantidades de informações obtidas a partir da análise da rede, detectar vulnerabilidades recentes que possam causar ameaças à rede monitorada, além de gerar visualizações gráficas que auxiliem os usuários no gerenciamento e manutenção das redes de computadores.
+
+
+
+
+%Neste trabalho é proposto a criação de uma ferramenta que seja capaz de auxiliar na detecção e visualização de vulnerabilidades em redes de computadores. A ideia fundamental é utilizar sensores, com o objetivo de obter a maior quantidade de informações dos dispositivos que estão sendo analisados, criando perfis e utilizando esses perfis para facilitar a administração da rede. Além disso, todas essas informações serão mostradas de maneira gráfica, facilitando para o usuário o entendimento dos resultados obtidos.
+%Primeiramente, para testar qual \textit{scanner} sera utilizado para implementar a ferramenta proposta, foi utilizado um conjunto de teste, contendo 100 \gls{IP}s de uma determinada empresa. O conjunto foi analisado por dois \textit{scanners} de vulnerabilidades diferentes, tais \textit{scanners} foram escolhidos para teste devido a popularidade dos mesmos, são  eles, \textit{Open Vulnerability Assessment System} (OpenVAS) e Nessus. A configuração da rede e dos sistemas por trás desses \gls{IP}s é desconhecida. Mais de 170 vulnerabilidades foram encontradas em 61 \gls{IP}s destintos.
+
+O presente trabalho é dividido em capítulos, o capítulo 2 apresenta a fundamentação teórica, revisando conceitos importantes. O capítulo 3 comenta sobre os trabalhos relacionados. O capítulo 4 engloba a proposta e metodologia do trabalho a ser realizado. No capítulo 5 encontra-se a conclusão parcial e os trabalhos futuros.
+

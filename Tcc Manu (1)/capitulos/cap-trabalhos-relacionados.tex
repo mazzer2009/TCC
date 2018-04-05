@@ -1,0 +1,47 @@
+% ATENÇÃO - veja com o seu orientador se você vai ter este capítulo e se este vai ter nome!
+\chapter{Trabalhos Relacionados}
+\label{cap:trabalhos:relacionados}
+
+Neste capítulo serão apresentados os trabalhos relacionados com o presente trabalho, quais são suas similaridades, além de uma breve explicação de cada um.
+
+\section{Vulnerability Assessment and Patching Management}
+
+Em seu trabalho \citeonline{7489631} enfatiza a identificação e remoção de vulnerabilidades web, o artigo comenta principalmente de avaliação de vulnerabilidades (\textit{vulnerability assessment}), que é o processo de identificação, quantificação e classificação de vulnerabilidades. Primeiramente é explicado o processo de uma avaliação de vulnerabilidades, que é basicamente encontrar o sistema alvo e extrair informações. Nesse procedimento são realizados vários tipos de testes de penetração, como por exemplo, teste de caixa preta (\textit{black box testing}) e teste de caixa branca (\textit{white box testing}).
+
+Durante esses testes, profissionais de segurança ou \textit{hackers}, tentam encontrar qualquer vulnerabilidade para depois explorá-la, e então ganhar acesso ao sistema. \citeonline{7489631} cita os principais motivos para a realização de um teste de penetração, são eles:
+\begin{enumerate}
+    \item Identificar os meios que um atacante pode obter acesso ao sistema;
+    \item Saber qual é a maior ameaça do sistema, e corrigi-la assim que possível;
+    \item Identificar as vulnerabilidades que sistemas automatizados não conseguem identificar;
+    \item Identificar os riscos comerciais existentes. Uma empresa perderá a fé de seus clientes caso seus serviços fiquem indisponíveis.
+    \item Verificar se o sistema responde bem aos ataques comuns.
+    \item Mostrar que ataques podem ser realizados em sistemas vulneráveis, e assim convencer as organizações a investir mais em segurança.
+\end{enumerate}
+
+\citeonline{7489631} explica dois tipos de testes de penetração, os testes de penetração automáticos, no qual softwares procuram por vulnerabilidades em aplicações web, no final do teste é gerado um relatório contendo as vulnerabilidades e os métodos utilizados para resolver tais vulnerabilidades. E os testes de penetração manuais, no qual um profissional de segurança utiliza técnicas do mundo real, as mesmas utilizadas por \textit{hackers}, para explorar e ganhar acesso ao sistema, por exemplo, \textit{SQL Injection}, \gls{CSRF}, entre outras, o profissional em segurança utiliza seu conhecimento para encontrar, explorar e consertar as vulnerabilidades encontradas durante o processo de teste.
+
+Também é discutido os principais tipos de vulnerabilidades baseadas em \gls{SQLI}, um tipo de vulnerabilidade na qual o atacante consegue ``injetar'' \gls{SQL}, em uma base de dados e conseguir informações restritas. Em seu trabalho \citeonline{7489631} introduz uma metodologia capaz de identificar declarações em aplicações \gls{PHP}, que podem estar vulneráveis para à \gls{SQLI}.
+
+\citeonline{7489631} se relaciona com o presente trabalho quando utiliza teste de intrusão automático (automated pentesting) para encontrar vulnerabilidades. Testes de intrusão automáticos utilizam softwares para analisar dispositivos e identificar as vulnerabilidades existentes nos mesmos, por exemplo, \gls{OpenVAS} e Nessus.
+
+
+\section{A Vulnerability Scanning Tool for Session Management Vulnerabilities}
+\citeonline{vulnerabilityScanningTool} comenta a respeito das vulnerabilidades de gerenciamento de sessão (\textit{session management vulnerabilities} ) existentes em aplicações web. De modo resumido, vulnerabilidades de gerenciamento de sessão são muitas vezes vulnerabilidades que ainda estão sendo descobertas. O método de gerenciamento de sessão mais comum utiliza um identificador de sessão (\textit{session identifier}), esse \gls{SID} é um par ``nome=valor''. O valor é um número correspondente a uma sessão na web, o \gls{SID} deve ser enviado em cada requisição feita. Em aplicações web, o \gls{SID} geralmente é enviado em um campo oculto ou em um \textit{cookie} HTTP. Na maioria das vezes o gerenciamento de sessão é implementado incorretamente, o que acaba gerando as seguintes vulnerabilidades:
+\begin{itemize}
+    \item Correção de sessão (\textit{Session Fixation}): É uma vulnerabilidade que ocorre quando o atacante visita uma página web e recebe um \gls{SID}, após isso, o invasor manda uma \gls{URL} contendo o \gls{SID} para a vítima, quando a vítima visita a \gls{URL} e se autentica o \gls{SID} será o mesmo que o do atacante.
+    \item \gls{CSRF}: Um invasor manda uma \gls{URL} manipulada para a vítima, quando visitado, a \gls{URL} faz uma requisição para o servidor web, sem nenhum reconhecimento da vítima.
+    \item Insuficiente atributos \textit{Cookies}: O \textit{cookie}\footnote{cookies são pequenos arquivos de textos utilizados para que os sites recuperem informações sobre seus visitantes \cite{bishop2005introduction}.} geralmente serve como um contêiner para o \gls{SID}. Portanto o desenvolvedor deve tomar um cuidado especial quando estiver lidando com tais atributos, caso contrário, o atacante será capaz de roubar o \textit{cookie} contendo o \gls{SID}.
+\end{itemize}
+
+Para lidar para essas vulnerabilidades, \citeonline{vulnerabilityScanningTool} propõe uma solução de duas partes, a primeira é uma extensão para navegadores web, e a segunda parte é um \textit{plugin} desenvolvido para a ferramenta de análise de vulnerabilidades web Nikto. A primeira parte (extensão para navegadores web) serve como um identificador de vulnerabilidades único. E a segunda parte (Nikto) é usada para suportar o teste continuo, repetindo todo o processo feito na primeira parte automaticamente.
+
+\citeonline{vulnerabilityScanningTool} acaba se assemelhando ao presente trabalho principalmente por dois motivos: A criação de uma ferramenta capaz de identificar vulnerabilidades utilizando um \textit{scanner},  e a automação da ferramenta.
+
+\section{Penetration Testing in a Box}
+\citeonline{Epling:2015:PTB:2885990.2885996} comenta sobre a importância dos testes de intrusão (\textit{pentest}) para qualquer empresa que dependa de uma infraestrutura de rede. Porém, esses testes possuem alguns empecilhos, por exemplo, o procedimento para executar um \textit{\gls{pentest}} pode demorar semanas ou até meses dependendo da infraestrutura da rede a ser analisada e da quantidade de informações que os clientes desejam, aumentando de maneira significativa o seu custo. Tal custo pode ser um problema para as pequenas empresas, que muitas vezes não possuem verbas necessárias para realizar um teste completo. Portanto, \citeonline{Epling:2015:PTB:2885990.2885996} menciona a existência de dispositivos, disponíveis comercialmente, que possuem todas as ferramentas necessárias para realizar um teste de intrusão de maneira confiável.
+
+
+Deste modo, \citeonline{Epling:2015:PTB:2885990.2885996} propõe a criação de um dispositivo barato, capaz de realizar \textit{\gls{pentest}} utilizando microcomputadores Raspberry Pi\cite{raspberry}. Permitindo que empresas que não possuem orçamentos necessário para contratar firmas de segurança consigam realizar avaliações completas de suas infraestruturas. \citeonline{Epling:2015:PTB:2885990.2885996} chama deu dispositivo de \textit{Pentest Box}. Quando conectado às redes internas, o \textit{Pentest Box} possibilita que administradores acessem sua interface web remotamente, podendo realizar varreduras, e avaliação de toda rede.
+
+\citeonline{Epling:2015:PTB:2885990.2885996} se assemelha com o presente trabalho quando utiliza \textit{scanners} de vulnerabilidades para realizar a varredura das redes monitoradas. Além disso, o \textit{Pentest Box} automatiza o processo reconhecimento da rede local, tal automatização é um dos objetivos do trabalho futuro da ferramenta proposta.
+ 
